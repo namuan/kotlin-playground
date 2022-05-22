@@ -1,0 +1,13 @@
+test.dependsOn "spotlessApply"
+
+spotless {
+    ratchetFrom 'origin/master' // only look at changed files
+
+    format 'misc', {
+        target '**/*.java', '**/*.kt', 'Jenkinsfile*', '*.gradle', '**/*.properties'
+
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+}
